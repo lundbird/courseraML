@@ -107,7 +107,8 @@ pause;
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
-lambda = 1;
+
+lambda = .01;
 
 % Set Options
 options = optimset('GradObj', 'on', 'MaxIter', 400);
@@ -120,7 +121,6 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 plotDecisionBoundary(theta, X, y);
 hold on;
 title(sprintf('lambda = %g', lambda))
-
 % Labels and Legend
 xlabel('Microchip Test 1')
 ylabel('Microchip Test 2')
