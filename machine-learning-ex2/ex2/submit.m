@@ -1,6 +1,6 @@
 function submit()
   addpath('./lib');
-
+%token = T0kkvHT5muTTETW5
   conf.assignmentSlug = 'logistic-regression';
   conf.itemName = 'Logistic Regression';
   conf.partArrays = { ...
