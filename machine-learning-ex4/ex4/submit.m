@@ -1,6 +1,6 @@
 function submit()
   addpath('./lib');
-
+%token  = ryvfgOyFvi9LZtoQ
   conf.assignmentSlug = 'neural-network-learning';
   conf.itemName = 'Neural Networks Learning';
   conf.partArrays = { ...
