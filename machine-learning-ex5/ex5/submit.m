@@ -1,6 +1,6 @@
 function submit()
   addpath('./lib');
-
+%token = meb9F190LahUZkaC
   conf.assignmentSlug = 'regularized-linear-regression-and-bias-variance';
   conf.itemName = 'Regularized Linear Regression and Bias/Variance';
   conf.partArrays = { ...
