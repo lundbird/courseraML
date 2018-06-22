@@ -38,6 +38,19 @@ error_val = zeros(length(lambda_vec), 1);
 %       end
 %
 %
+for i = 1:length(lambda_vec)
+   lambda = lambda_vec(i);
+   theta = trainLinearReg(X,y,lambda);
+   error_train(i) = linearRegCostFunction(X,y,theta,0);  
+   %why must lambda be zero here? If we dont then we are double counting
+   %regularization. we dont regularize once when we train by calculating cost
+   %then again when we calculate error. Also error and cost are NOT the
+   %same thing even though they have the same formula. Cost is used to
+   %train a model and uses regularization and error is used to TEST and
+   %model and doesnt use regularization
+   
+   error_val(i) = linearRegCostFunction(Xval,yval,theta,0);
+end
 
 
 
