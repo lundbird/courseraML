@@ -205,6 +205,7 @@ pause;
     validationCurve(X_poly, y, X_poly_val, yval);
 
 close all;
+
 plot(lambda_vec, error_train, lambda_vec, error_val);
 legend('Train', 'Cross Validation');
 xlabel('lambda');
@@ -216,5 +217,18 @@ for i = 1:length(lambda_vec)
             lambda_vec(i), error_train(i), error_val(i));
 end
 
+%% =========== Part 9: Calculate Test set error =============
+%calculate test error with optimized lambda
+[q,i] = min(error_val);
+opt_lambda = lambda_vec(i);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
+fprintf("optimized lambda %f", opt_lambda);
+opt_theta = trainLinearReg(X_poly,y,opt_lambda);
+test_accuracy = linearRegCostFunction(X_poly_test,ytest,opt_theta,0);
+fprintf("final test accuracy %f", test_accuracy);
+
+
+
+
+
