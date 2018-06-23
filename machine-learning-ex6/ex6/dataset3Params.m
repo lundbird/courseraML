@@ -23,11 +23,23 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+Cvec = [.01 .03 .1 .3 1 3 10 30];
+Svec = [.01 .03 .1 .3 1 3 10 30];
+E = zeros(length(Cvec),length(Svec));
 
+for idx = 1:numel(Cvec)
+    for vdx = 1:numel(Svec)
+        model= svmTrain(X, y, Cvec(idx), @(x1, x2) gaussianKernel(x1, x2, Svec(vdx)));
+        pred = svmPredict(model,Xval);
+        E(idx, vdx) = mean(double(pred ~=yval));
+    end 
+end 
 
+min_val = min(min(E));
+[C_ind, S_ind] = find(E==min_val);
 
-
-
+C=Cvec(C_ind);
+S=Svec(S_ind);
 
 % =========================================================================
 
