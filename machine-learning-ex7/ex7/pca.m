@@ -21,7 +21,7 @@ S = zeros(n);
 %
 cov = 1/m * X'*X;
 
-[U,S] = svd(cov);
+[U,S,V] = svd(cov);
 
 
 
