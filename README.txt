@@ -7,3 +7,4 @@ ex4: Neural Networks Learning
 ex5: Regularized Linear Regression and Bias/Variance
 ex6: Support Vector Machines
 ex7: K-Means Clustering and PCA
+ex8: Anomaly Detection and Recommender Systems
